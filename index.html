@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ko" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윤소영 — 풀스택 개발자</title>
+    <meta
+      name="description"
+      content="안정적인 서비스 구현을 중요하게 생각하는 풀스택 개발자 윤소영입니다."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'bg-primary': '#0a0a0f',
+              'bg-secondary': '#111118',
+              'bg-card': '#16161e',
+              accent: '#6366f1',
+              'accent-hover': '#818cf8',
+              'text-primary': '#f1f5f9',
+              'text-secondary': '#94a3b8',
+              'text-muted': '#475569',
+              'border-subtle': '#1e1e2e',
+            },
+            fontFamily: {
+              sans: ['Inter', 'Pretendard Variable', 'system-ui', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
+            },
+            fontSize: {
+              xs: ['0.75rem', { lineHeight: '1rem' }],
+              sm: ['0.875rem', { lineHeight: '1.25rem' }],
+              base: ['1rem', { lineHeight: '1.5rem' }],
+              lg: ['1.125rem', { lineHeight: '1.75rem' }],
+              xl: ['1.25rem', { lineHeight: '1.75rem' }],
+              '2xl': ['1.5rem', { lineHeight: '2rem' }],
+              '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+              '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+              '5xl': ['3rem', { lineHeight: '3.5rem' }],
+              '6xl': ['3.75rem', { lineHeight: '1' }],
+              '7xl': ['4.5rem', { lineHeight: '1' }],
+              '8xl': ['6rem', { lineHeight: '1' }],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-bg-primary text-text-primary">
+    <!-- ===== Navigation ===== -->
+    <nav id="navbar" class="fixed top-0 w-full z-50">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a
+          href="#hero"
+          class="text-xl font-bold text-text-primary hover:text-accent transition-colors"
+        >
+          SOYOUNG.
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="nav-link">소개</a>
+          <a href="#skills" class="nav-link">기술</a>
+          <a href="#projects" class="nav-link">프로젝트</a>
+          <a href="#contact" class="nav-link">연락처</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="hamburger"
+          class="md:hidden hamburger"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden mobile-menu md:hidden">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="nav-link block py-2">소개</a>
+          <a href="#skills" class="nav-link block py-2">기술</a>
+          <a href="#projects" class="nav-link block py-2">프로젝트</a>
+          <a href="#contact" class="nav-link block py-2">연락처</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== Hero Section ===== -->
+    <section
+      id="hero"
+      class="relative min-h-screen bg-bg-primary flex items-center justify-center pt-20 px-6 md:px-12 overflow-hidden"
+    >
+      <!-- Grid Background -->
+      <div class="grid-background"></div>
+
+      <!-- Glow Background -->
+      <div class="hero-glow"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-6xl w-full">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+          <div class="flex-1 text-center md:text-left">
+            <!-- Eyebrow -->
+            <div class="hero-eyebrow text-accent text-sm md:text-base mb-4 md:mb-6 font-medium">
+              안녕하세요, 저는
+            </div>
+
+            <!-- Name -->
+            <h1
+              class="hero-name text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 md:mb-6 leading-tight"
+            >
+              윤소영
+            </h1>
+
+            <!-- Role with Gradient -->
+            <h2
+              class="hero-role gradient-text text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-8"
+            >
+              풀스택 개발자
+            </h2>
+
+            <!-- Tagline -->
+            <p
+              class="hero-tagline text-text-secondary text-base md:text-lg max-w-2xl mb-8 md:mb-12 leading-relaxed"
+            >
+              안정적인 서비스 구현을 중요하게 생각합니다.<br class="hidden md:block" />
+              사용자에게 문제 없이 전달되는 경험을 위해 꼼꼼하게 개발하고 개선합니다.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div
+              class="hero-cta flex flex-col sm:flex-row gap-4 md:gap-6 mb-12 md:mb-16 justify-center md:justify-start"
+            >
+              <a href="mailto:soyoung_it@naver.com" class="btn btn-primary"> 이메일 보내기 </a>
+              <a
+                href="https://github.com/yoonsoyoung"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                GitHub 보기
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials flex gap-6 justify-center md:justify-start">
+              <a
+                href="mailto:soyoung_it@naver.com"
+                class="text-text-secondary hover:text-accent transition-colors"
+                aria-label="이메일"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/yoonsoyoung"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-text-secondary hover:text-accent transition-colors"
+                aria-label="GitHub"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Avatar Image -->
+          <div class="hero-socials flex-shrink-0 flex justify-center md:justify-end">
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl shadow-accent/20"
+              >
+                <img
+                  src="myprofile.png"
+                  alt="윤소영 아바타"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <!-- Glow ring -->
+              <div
+                class="absolute inset-0 rounded-full border border-accent/20 scale-110 animate-pulse pointer-events-none"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+        <svg
+          class="w-6 h-6 text-accent mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== About Section ===== -->
+    <section id="about" class="fade-in-section relative py-24 px-6 md:px-12 bg-bg-primary">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Title -->
+        <div class="mb-16">
+          <div class="divider"></div>
+          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">About Me</h2>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          <!-- Left: Bio Text -->
+          <div class="flex flex-col gap-6">
+            <p class="text-text-secondary text-base md:text-lg leading-relaxed">
+              안정적인 서비스 구현을 중요하게 생각하는 풀스택 개발자입니다. 사용자에게 문제 없이
+              전달되는 경험을 위해 꼼꼼하게 개발하고 개선합니다.
+            </p>
+            <p class="text-text-secondary text-base md:text-lg leading-relaxed">
+              실제 사용자에게 가치를 주는 서비스를 만들며 지속적으로 성장하고자 합니다.
+              프론트엔드부터 백엔드까지 전체 스택을 이해하고, 각 계층 간의 최적 상태를 추구합니다.
+            </p>
+            <p class="text-text-secondary text-base md:text-lg leading-relaxed">
+              새로운 기술을 배우고 적용하는 것을 좋아하며, 협업과 코드 리뷰를 통해 더 나은 개발자가
+              되기 위해 노력하고 있습니다.
+            </p>
+          </div>
+
+          <!-- Right: Quick Stats -->
+          <div
+            class="bg-bg-card border border-border-subtle rounded-2xl p-8 flex flex-col gap-6 h-fit"
+          >
+            <div>
+              <div class="text-accent font-mono text-xs tracking-widest uppercase mb-2">About</div>
+              <h3 class="text-text-primary text-lg font-semibold">개발자로서의 여정</h3>
+            </div>
+
+            <div class="space-y-4">
+              <div class="pb-4 border-b border-border-subtle">
+                <div class="text-accent font-mono text-xs mb-1">Focus</div>
+                <p class="text-text-secondary text-sm">안정적이고 사용자 중심의 서비스</p>
+              </div>
+              <div class="pb-4 border-b border-border-subtle">
+                <div class="text-accent font-mono text-xs mb-1">Approach</div>
+                <p class="text-text-secondary text-sm">꼼꼼한 개발과 지속적인 개선</p>
+              </div>
+              <div>
+                <div class="text-accent font-mono text-xs mb-1">Goal</div>
+                <p class="text-text-secondary text-sm">실제 가치를 전달하며 성장하기</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills Section ===== -->
+    <section id="skills" class="fade-in-section relative py-24 px-6 md:px-12 bg-bg-secondary">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Title -->
+        <div class="mb-16">
+          <div class="divider"></div>
+          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">기술 스택</h2>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Frontend -->
+          <div class="bg-bg-card border border-border-subtle rounded-2xl p-8">
+            <h3 class="text-accent font-mono text-xs tracking-widest uppercase mb-6">Frontend</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-orange-500/60 hover:bg-orange-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-orange inline-block"></span>HTML 5
+              </span>
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-blue-500/60 hover:bg-blue-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-blue inline-block"></span>CSS 3
+              </span>
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-yellow inline-block"></span>JavaScript
+              </span>
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-green-500/60 hover:bg-green-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-green inline-block"></span>Vue.js
+              </span>
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-cyan-500/60 hover:bg-cyan-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-cyan inline-block"></span>React
+              </span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="bg-bg-card border border-border-subtle rounded-2xl p-8">
+            <h3 class="text-green-500 font-mono text-xs tracking-widest uppercase mb-6">Backend</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-red-500/60 hover:bg-red-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-red inline-block"></span>Java
+              </span>
+              <span
+                class="skill-pill px-4 py-2 bg-bg-primary border border-border-subtle rounded-full text-text-primary text-sm hover:border-emerald-500/60 hover:bg-emerald-500/10 transition-all duration-200"
+              >
+                <span class="skill-dot dot-emerald inline-block"></span>Spring Boot
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section id="projects" class="fade-in-section relative py-24 px-6 md:px-12 bg-bg-primary">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Title -->
+        <div class="mb-16">
+          <div class="divider"></div>
+          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-2">프로젝트</h2>
+          <p class="text-text-secondary text-base md:text-lg">
+            준비 중인 프로젝트들을 곧 공개할 예정입니다.
+          </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <article
+            class="project-card group relative overflow-hidden rounded-2xl border border-border-subtle cursor-pointer"
+            style="height: 320px"
+          >
+            <div class="project-accent-bar" style="z-index: 20"></div>
+
+            <!-- Background Image -->
+            <img
+              src="https://picsum.photos/seed/fullstack/800/500"
+              alt="풀스택 웹 애플리케이션"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            <!-- Default: bottom gradient overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-400 group-hover:opacity-0 pointer-events-none"
+            >
+              <div class="absolute top-6 left-6">
+                <span class="text-white/60 font-mono text-xs">#01</span>
+              </div>
+              <div class="absolute bottom-6 left-6">
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+            </div>
+
+            <!-- Hover: full info overlay -->
+            <div
+              class="absolute inset-0 bg-bg-card/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3"
+            >
+              <div class="flex items-start justify-between">
+                <span class="text-text-muted font-mono text-xs">#01</span>
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+              <h3 class="text-text-primary font-semibold text-lg">풀스택 웹 애플리케이션</h3>
+              <p class="text-text-secondary text-sm leading-relaxed flex-1">
+                사용자 경험을 중심으로 설계한 풀스택 웹 애플리케이션입니다. 프론트엔드와 백엔드를
+                함께 구현합니다.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+              <div class="flex gap-3 pt-2 border-t border-border-subtle">
+                <span class="link-icon disabled">GitHub</span>
+                <span class="link-icon disabled">Live</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article
+            class="project-card group relative overflow-hidden rounded-2xl border border-border-subtle cursor-pointer"
+            style="height: 320px"
+          >
+            <div class="project-accent-bar" style="z-index: 20"></div>
+
+            <!-- Background Image -->
+            <img
+              src="https://picsum.photos/seed/restapi/800/500"
+              alt="REST API 서버"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            <!-- Default: bottom gradient overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-400 group-hover:opacity-0 pointer-events-none"
+            >
+              <div class="absolute top-6 left-6">
+                <span class="text-white/60 font-mono text-xs">#02</span>
+              </div>
+              <div class="absolute bottom-6 left-6">
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+            </div>
+
+            <!-- Hover: full info overlay -->
+            <div
+              class="absolute inset-0 bg-bg-card/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3"
+            >
+              <div class="flex items-start justify-between">
+                <span class="text-text-muted font-mono text-xs">#02</span>
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+              <h3 class="text-text-primary font-semibold text-lg">REST API 서버</h3>
+              <p class="text-text-secondary text-sm leading-relaxed flex-1">
+                확장 가능하고 효율적인 REST API 서버 구현. 데이터베이스 설계부터 배포까지 전체
+                과정을 포함합니다.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">JPA</span>
+              </div>
+              <div class="flex gap-3 pt-2 border-t border-border-subtle">
+                <span class="link-icon disabled">GitHub</span>
+                <span class="link-icon disabled">Live</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article
+            class="project-card group relative overflow-hidden rounded-2xl border border-border-subtle cursor-pointer"
+            style="height: 320px"
+          >
+            <div class="project-accent-bar" style="z-index: 20"></div>
+
+            <!-- Background Image -->
+            <img
+              src="https://picsum.photos/seed/frontend/800/500"
+              alt="프론트엔드 포트폴리오"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            <!-- Default: bottom gradient overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-400 group-hover:opacity-0 pointer-events-none"
+            >
+              <div class="absolute top-6 left-6">
+                <span class="text-white/60 font-mono text-xs">#03</span>
+              </div>
+              <div class="absolute bottom-6 left-6">
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+            </div>
+
+            <!-- Hover: full info overlay -->
+            <div
+              class="absolute inset-0 bg-bg-card/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3"
+            >
+              <div class="flex items-start justify-between">
+                <span class="text-text-muted font-mono text-xs">#03</span>
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+              <h3 class="text-text-primary font-semibold text-lg">프론트엔드 포트폴리오</h3>
+              <p class="text-text-secondary text-sm leading-relaxed flex-1">
+                React로 구현한 인터랙티브한 포트폴리오 사이트. 모던한 UI와 부드러운 애니메이션을
+                제공합니다.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <div class="flex gap-3 pt-2 border-t border-border-subtle">
+                <span class="link-icon disabled">GitHub</span>
+                <span class="link-icon disabled">Live</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact" class="fade-in-section relative py-24 px-6 md:px-12 bg-bg-secondary">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Title -->
+        <div class="mb-16">
+          <div class="divider"></div>
+          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-2">연락하기</h2>
+          <p class="text-text-secondary text-base md:text-lg">
+            협업이나 문의 사항이 있으시면 언제든지 연락해 주세요.
+          </p>
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+          <!-- Email Card -->
+          <a href="mailto:soyoung_it@naver.com" class="contact-card group">
+            <svg
+              class="w-8 h-8 text-accent mx-auto mb-3 group-hover:text-accent-hover transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            <div class="font-semibold text-text-primary mb-1">이메일</div>
+            <div class="text-text-secondary text-sm">soyoung_it@naver.com</div>
+          </a>
+
+          <!-- GitHub Card -->
+          <a
+            href="https://github.com/yoonsoyoung"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card group"
+          >
+            <svg
+              class="w-8 h-8 text-accent mx-auto mb-3 group-hover:text-accent-hover transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            <div class="font-semibold text-text-primary mb-1">GitHub</div>
+            <div class="text-text-secondary text-sm">github.com/yoonsoyoung</div>
+          </a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center">
+          <a href="mailto:soyoung_it@naver.com" class="btn btn-primary"> 이메일 보내기 </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-bg-secondary border-t border-border-subtle py-12 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-border-subtle">
+          <!-- Left -->
+          <div>
+            <h3 class="text-text-primary font-bold text-lg mb-1">윤소영</h3>
+            <p class="text-text-secondary text-sm">풀스택 개발자</p>
+          </div>
+
+          <!-- Right: Social Links -->
+          <div class="flex justify-center md:justify-end gap-6">
+            <a
+              href="https://github.com/yoonsoyoung"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-text-secondary hover:text-accent transition-colors"
+              aria-label="GitHub"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:soyoung_it@naver.com"
+              class="text-text-secondary hover:text-accent transition-colors"
+              aria-label="이메일"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-text-muted text-xs md:text-sm">
+          © 2026 윤소영. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" aria-label="맨 위로 이동" title="맨 위로">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
