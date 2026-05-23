@@ -12,6 +12,7 @@ desktop.ini
 
 # Claude Code
 .claude/settings.local.json
+.claude/plans/
 
 # Dependencies
 node_modules/
