@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko" class="scroll-smooth" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,15 +30,15 @@
         theme: {
           extend: {
             colors: {
-              'bg-primary': '#0a0a0f',
-              'bg-secondary': '#111118',
-              'bg-card': '#16161e',
-              accent: '#6366f1',
-              'accent-hover': '#818cf8',
-              'text-primary': '#f1f5f9',
-              'text-secondary': '#94a3b8',
-              'text-muted': '#475569',
-              'border-subtle': '#1e1e2e',
+              'bg-primary': 'var(--bg-primary)',
+              'bg-secondary': 'var(--bg-secondary)',
+              'bg-card': 'var(--bg-card)',
+              accent: 'var(--accent)',
+              'accent-hover': 'var(--accent-hover)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'text-muted': 'var(--text-muted)',
+              'border-subtle': 'var(--border-subtle)',
             },
             fontFamily: {
               sans: ['Inter', 'Pretendard Variable', 'system-ui', 'sans-serif'],
@@ -86,17 +86,33 @@
           <a href="#contact" class="nav-link">연락처</a>
         </div>
 
-        <!-- Mobile Hamburger -->
-        <button
-          id="hamburger"
-          class="md:hidden hamburger"
-          aria-label="메뉴 열기"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <!-- Theme Toggle Button & Mobile Hamburger -->
+        <div class="flex items-center gap-4">
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="theme-toggle" aria-label="테마 전환">
+            <!-- 달 아이콘 (다크모드일 때 표시) -->
+            <svg class="icon-moon w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <!-- 해 아이콘 (라이트모드일 때 표시) -->
+            <svg class="icon-sun w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M12 1v6M12 17v6M23 12h-6M7 12H1M20.485 3.515l-4.243 4.243M7.758 16.242l-4.243 4.243M20.485 20.485l-4.243-4.243M7.758 7.757L3.515 3.514" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button
+            id="hamburger"
+            class="md:hidden hamburger"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Menu -->

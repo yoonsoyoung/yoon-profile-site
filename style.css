@@ -11,6 +11,23 @@
   --text-secondary: #94a3b8;
   --text-muted: #475569;
   --border-subtle: #1e1e2e;
+  --nav-scrolled-bg: rgba(10, 10, 15, 0.9);
+}
+
+/* ===== Light Theme ===== */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --accent: #4f46e5;
+  --accent-hover: #6366f1;
+  --accent-secondary: #059669;
+  --accent-tertiary: #7c3aed;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-subtle: #e2e8f0;
+  --nav-scrolled-bg: rgba(248, 250, 252, 0.92);
 }
 
 /* ===== Global Styles ===== */
@@ -31,6 +48,7 @@ body {
   font-family: 'Inter', 'Pretendard Variable', system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===== Scrollbar Styling ===== */
@@ -218,7 +236,7 @@ nav {
 }
 
 nav.scrolled {
-  background-color: rgba(10, 10, 15, 0.9);
+  background-color: var(--nav-scrolled-bg);
   backdrop-filter: blur(10px);
   border-bottom-color: var(--border-subtle);
 }
@@ -492,6 +510,52 @@ nav.scrolled {
 
 #scroll-top-btn:active {
   transform: translateY(0);
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* ===== Light Mode Card Shadows ===== */
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="light"] .contact-card:hover {
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
 }
 
 /* ===== Responsive Adjustments ===== */

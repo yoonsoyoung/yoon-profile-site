@@ -5,6 +5,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.fade-in-section');
 const scrollTopBtn = document.getElementById('scroll-top-btn');
+const themeToggle = document.getElementById('theme-toggle');
 
 // ===== Navbar Scroll Behavior & Scroll Top Button =====
 window.addEventListener('scroll', () => {
@@ -102,6 +103,25 @@ const skillPills = document.querySelectorAll('.skill-pill');
 skillPills.forEach((pill, index) => {
   pill.style.transitionDelay = `${index * 0.1}s`;
 });
+
+// ===== Theme Toggle =====
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'light' ? 'dark' : 'light');
+});
+
+// ===== Initialize Theme =====
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  setTheme(savedTheme);
+} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+  setTheme('light');
+}
 
 // ===== Initialize =====
 updateActiveNavLink();
