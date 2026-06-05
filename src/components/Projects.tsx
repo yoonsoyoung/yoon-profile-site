@@ -71,7 +71,7 @@ export function Projects(): React.ReactElement {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-bg-card/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3">
+              <div className="absolute inset-0 bg-bg-card opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3">
                 <div className="flex items-start justify-between">
                   <span className="text-text-muted font-mono text-xs">#{project.id}</span>
                   <span className="coming-soon-badge">Coming Soon</span>
