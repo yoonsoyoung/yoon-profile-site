@@ -1,7 +1,12 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-export function Skills() {
-  const sectionRef = useRef(null);
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+export function Skills(): React.ReactElement {
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +34,7 @@ export function Skills() {
     };
   }, []);
 
-  const frontendSkills = [
+  const frontendSkills: Skill[] = [
     { name: 'HTML 5', icon: 'dot-orange' },
     { name: 'CSS 3', icon: 'dot-blue' },
     { name: 'JavaScript', icon: 'dot-yellow' },
@@ -37,7 +42,7 @@ export function Skills() {
     { name: 'React', icon: 'dot-cyan' },
   ];
 
-  const backendSkills = [
+  const backendSkills: Skill[] = [
     { name: 'Java', icon: 'dot-red' },
     { name: 'Spring Boot', icon: 'dot-emerald' },
   ];

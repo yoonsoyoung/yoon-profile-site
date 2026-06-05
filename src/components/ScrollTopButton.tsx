@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export function ScrollTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
+export function ScrollTopButton(): React.ReactElement {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setIsVisible(window.scrollY > 300);
     };
 
@@ -12,7 +12,7 @@ export function ScrollTopButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
+  const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

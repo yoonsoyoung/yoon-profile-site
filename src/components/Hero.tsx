@@ -1,4 +1,6 @@
-export function Hero() {
+import React from 'react';
+
+export function Hero(): React.ReactElement {
   return (
     <section
       id="hero"

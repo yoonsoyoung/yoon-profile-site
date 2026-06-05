@@ -1,4 +1,6 @@
-export function Footer() {
+import React from 'react';
+
+export function Footer(): React.ReactElement {
   return (
     <footer className="bg-bg-secondary border-t border-border-subtle py-12 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">

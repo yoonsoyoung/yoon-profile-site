@@ -1,7 +1,15 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-export function Projects() {
-  const sectionRef = useRef(null);
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  tech: string[];
+  image: string;
+}
+
+export function Projects(): React.ReactElement {
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +37,7 @@ export function Projects() {
     };
   }, []);
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: '01',
       title: '풀스택 웹 애플리케이션',

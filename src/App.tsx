@@ -8,7 +8,9 @@ import { Footer } from './components/Footer';
 import { ScrollTopButton } from './components/ScrollTopButton';
 import './index.css';
 
-function App() {
+import React from 'react';
+
+function App(): React.ReactElement {
   return (
     <div className="bg-bg-primary text-text-primary">
       <Navbar />

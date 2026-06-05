@@ -1,14 +1,19 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 
-export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
-  const { theme, toggleTheme } = useTheme();
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+export function Navbar(): React.ReactElement {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('hero');
+  const { toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setIsScrolled(window.scrollY > 50);
       updateActiveNavLink();
     };
@@ -17,7 +22,7 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const updateActiveNavLink = () => {
+  const updateActiveNavLink = (): void => {
     const scrollPosition = window.scrollY;
     const sections = document.querySelectorAll('[data-section-id]');
 
@@ -33,11 +38,11 @@ export function Navbar() {
     setActiveSection(currentSection);
   };
 
-  const handleNavLinkClick = () => {
+  const handleNavLinkClick = (): void => {
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { label: '소개', href: '#about' },
     { label: '기술', href: '#skills' },
     { label: '프로젝트', href: '#projects' },
