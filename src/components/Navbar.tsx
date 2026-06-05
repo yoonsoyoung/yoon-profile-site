@@ -38,7 +38,9 @@ export function Navbar(): React.ReactElement {
     setActiveSection(currentSection);
   };
 
-  const handleNavLinkClick = (): void => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string): void => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setIsMobileMenuOpen(false);
   };
 
@@ -56,6 +58,7 @@ export function Navbar(): React.ReactElement {
       <div className="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <a
           href="#hero"
+          onClick={(e) => handleNavLinkClick(e, 'hero')}
           className="text-xl font-bold text-text-primary hover:text-accent transition-colors"
         >
           SOYOUNG.
@@ -66,6 +69,7 @@ export function Navbar(): React.ReactElement {
             <a
               key={href}
               href={href}
+              onClick={(e) => handleNavLinkClick(e, href.slice(1))}
               className={`nav-link ${
                 activeSection === href.slice(1) ? 'active' : ''
               }`}
@@ -119,7 +123,7 @@ export function Navbar(): React.ReactElement {
                 className={`nav-link block py-2 ${
                   activeSection === href.slice(1) ? 'active' : ''
                 }`}
-                onClick={handleNavLinkClick}
+                onClick={(e) => handleNavLinkClick(e, href.slice(1))}
               >
                 {label}
               </a>
