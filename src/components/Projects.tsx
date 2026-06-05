@@ -1,12 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  tech: string[];
-  image: string;
-}
+import { Link } from 'react-router-dom';
+import { projects, isDetailProject } from '../data/projects';
 
 export function Projects(): React.ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -36,30 +30,6 @@ export function Projects(): React.ReactElement {
       }
     };
   }, []);
-
-  const projects: Project[] = [
-    {
-      id: '01',
-      title: '풀스택 웹 애플리케이션',
-      description: '사용자 경험을 중심으로 설계한 풀스택 웹 애플리케이션입니다. 프론트엔드와 백엔드를 함께 구현합니다.',
-      tech: ['Spring Boot', 'Vue.js', 'MySQL'],
-      image: 'https://picsum.photos/seed/fullstack/800/500',
-    },
-    {
-      id: '02',
-      title: 'REST API 서버',
-      description: '확장 가능하고 효율적인 REST API 서버 구현. 데이터베이스 설계부터 배포까지 전체 과정을 포함합니다.',
-      tech: ['Java', 'Spring Boot', 'JPA'],
-      image: 'https://picsum.photos/seed/restapi/800/500',
-    },
-    {
-      id: '03',
-      title: '프론트엔드 포트폴리오',
-      description: 'React로 구현한 인터랙티브한 포트폴리오 사이트. 모던한 UI와 부드러운 애니메이션을 제공합니다.',
-      tech: ['React', 'JavaScript', 'CSS'],
-      image: 'https://picsum.photos/seed/frontend/800/500',
-    },
-  ];
 
   return (
     <section
@@ -118,8 +88,19 @@ export function Projects(): React.ReactElement {
                   ))}
                 </div>
                 <div className="flex gap-3 pt-2 border-t border-border-subtle">
-                  <span className="link-icon disabled">GitHub</span>
-                  <span className="link-icon disabled">Live</span>
+                  {isDetailProject(project) ? (
+                    <Link
+                      to={`/projects/${project.id}`}
+                      className="link-icon text-accent hover:text-accent-hover"
+                    >
+                      상세보기
+                    </Link>
+                  ) : (
+                    <>
+                      <span className="link-icon disabled">GitHub</span>
+                      <span className="link-icon disabled">Live</span>
+                    </>
+                  )}
                 </div>
               </div>
             </article>
