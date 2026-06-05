@@ -73,7 +73,7 @@ export function Hero(): React.ReactElement {
             <div className="relative">
               <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl shadow-accent/20">
                 <img
-                  src="./public/myprofile.png"
+                  src={`${import.meta.env.BASE_URL}myprofile.png`}
                   alt="윤소영 아바타"
                   className="w-full h-full object-cover object-top"
                 />
