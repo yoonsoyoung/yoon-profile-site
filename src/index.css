@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ===== CSS Custom Properties ===== */
 :root {
   --bg-primary: #0a0a0f;
@@ -18,7 +22,7 @@
 [data-theme="light"] {
   --bg-primary: #f8fafc;
   --bg-secondary: #f1f5f9;
-  --bg-card: #ffffff;
+  --bg-card: #fafafa;
   --accent: #4f46e5;
   --accent-hover: #6366f1;
   --accent-secondary: #059669;
@@ -483,7 +487,7 @@ nav.scrolled {
   height: 44px;
   border-radius: 50%;
   background-color: var(--accent);
-  color: white;
+  color: #fafafa;
   border: none;
   cursor: pointer;
   display: flex;
