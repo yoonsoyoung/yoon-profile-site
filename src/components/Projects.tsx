@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { projects, isDetailProject, ProjectDetail } from '../data/projects';
+import { projects, isDetailProject } from '../data/projects';
 import { ProjectModal } from './ProjectModal';
 
 export function Projects(): React.ReactElement {
