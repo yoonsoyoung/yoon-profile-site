@@ -1,9 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { projects, isDetailProject } from '../data/projects';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { projects, isDetailProject, ProjectDetail } from '../data/projects';
+import { ProjectModal } from './ProjectModal';
 
 export function Projects(): React.ReactElement {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const selectedProject = useMemo(() => {
+    if (!selectedId) return null;
+    const found = projects.find((p) => p.id === selectedId);
+    return found && isDetailProject(found) ? found : null;
+  }, [selectedId]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,12 +96,12 @@ export function Projects(): React.ReactElement {
                 </div>
                 <div className="flex gap-3 pt-2 border-t border-border-subtle">
                   {isDetailProject(project) ? (
-                    <Link
-                      to={`/projects/${project.id}`}
+                    <button
+                      onClick={() => setSelectedId(project.id)}
                       className="link-icon text-accent hover:text-accent-hover"
                     >
                       상세보기
-                    </Link>
+                    </button>
                   ) : (
                     <>
                       <span className="link-icon disabled">GitHub</span>
@@ -107,6 +114,8 @@ export function Projects(): React.ReactElement {
           ))}
         </div>
       </div>
+
+      <ProjectModal project={selectedProject} onClose={() => setSelectedId(null)} />
     </section>
   );
 }
