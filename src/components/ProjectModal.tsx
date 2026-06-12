@@ -86,6 +86,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps): React.Rea
               <div className="mb-8">
                 <div className="divider"></div>
                 <h2 className="text-3xl font-bold text-text-primary mb-4">서비스 소개</h2>
+                <a
+                  href={project.infoLink}
+                  className="text-text-secondary hover:text-accent transition-colors"
+                  aria-label="상세보기"
+                >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+              </a>
               </div>
 
               <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 mb-8">
@@ -100,6 +109,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps): React.Rea
                 <p className="text-text-secondary text-base leading-relaxed whitespace-pre-wrap">
                   {project.architecture}
                 </p>
+                <br className="hidden md:block" />
+                <img
+                src={project.architectureImage}
+                alt={project.architectureAlt}
+                className="w-full h-90 object-cover"
+              />
               </div>
             </div>
 
