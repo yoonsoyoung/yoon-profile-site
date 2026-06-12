@@ -26,9 +26,9 @@ export function Hero(): React.ReactElement {
             </h2>
 
             <p className="hero-tagline text-text-secondary text-base md:text-lg max-w-2xl mb-8 md:mb-12 leading-relaxed">
-              안정적인 서비스 구현을 중요하게 생각합니다.
+              사용자의 편리함을 고민하는 풀스택 개발자입니다.
               <br className="hidden md:block" />
-              사용자에게 문제 없이 전달되는 경험을 위해 꼼꼼하게 개발하고 개선합니다.
+              운영과 개발을 모두 경험하며 사용자 중심의 안정적인 서비스를 구현합니다.
             </p>
 
             <div className="hero-cta flex flex-col sm:flex-row gap-4 md:gap-6 mb-12 md:mb-16 justify-center md:justify-start">
