@@ -50,7 +50,7 @@ export function Projects(): React.ReactElement {
           <div className="divider"></div>
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-2">프로젝트</h2>
           <p className="text-text-secondary text-base md:text-lg">
-            준비 중인 프로젝트들을 곧 공개할 예정입니다.
+            개발자로서 길을 걸어온 프로젝트입니다.
           </p>
         </div>
 
@@ -73,15 +73,11 @@ export function Projects(): React.ReactElement {
                 <div className="absolute top-6 left-6">
                   <span className="text-white/60 font-mono text-xs">#{project.id}</span>
                 </div>
-                <div className="absolute bottom-6 left-6">
-                  <span className="coming-soon-badge">Coming Soon</span>
-                </div>
               </div>
 
               <div className="absolute inset-0 bg-bg-card opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-6 gap-3">
                 <div className="flex items-start justify-between">
                   <span className="text-text-muted font-mono text-xs">#{project.id}</span>
-                  <span className="coming-soon-badge">Coming Soon</span>
                 </div>
                 <h3 className="text-text-primary font-semibold text-lg">{project.title}</h3>
                 <p className="text-text-secondary text-sm leading-relaxed flex-1">
@@ -95,18 +91,13 @@ export function Projects(): React.ReactElement {
                   ))}
                 </div>
                 <div className="flex gap-3 pt-2 border-t border-border-subtle">
-                  {isDetailProject(project) ? (
+                  {isDetailProject(project) && (
                     <button
                       onClick={() => setSelectedId(project.id)}
                       className="link-icon text-accent hover:text-accent-hover"
                     >
                       상세보기
                     </button>
-                  ) : (
-                    <>
-                      <span className="link-icon disabled">GitHub</span>
-                      <span className="link-icon disabled">Live</span>
-                    </>
                   )}
                 </div>
               </div>
