@@ -27,7 +27,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps): React.Rea
       onClick={onClose}
     >
       <div
-        className="bg-bg-primary rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-bg-secondary border border-border-subtle rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
@@ -85,16 +85,22 @@ export function ProjectModal({ project, onClose }: ProjectModalProps): React.Rea
             <div className="mb-12">
               <div className="mb-8">
                 <div className="divider"></div>
-                <h2 className="text-3xl font-bold text-text-primary mb-4">서비스 소개</h2>
-                <a
-                  href={project.infoLink}
-                  className="text-text-secondary hover:text-accent transition-colors"
-                  aria-label="상세보기"
-                >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                  </svg>
-              </a>
+                <div className="flex items-center gap-3 mb-4">
+                  <h2 className="text-3xl font-bold text-text-primary">서비스 소개</h2>
+                  {project.infoLink && (
+                    <a
+                      href={project.infoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-secondary hover:text-accent transition-colors"
+                      aria-label="상세 정보 새 창에서 보기"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
 
               <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 mb-8">
