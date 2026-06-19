@@ -103,12 +103,12 @@ export const projects: Project[] = [
   {
     id: '03',
     title: '1Dayverse',
-    description: '메타버스 환경의 원데이 클래스 강의를 제공하는 웹 서비스 입니다.',
-    tech: ['Unity', 'Vue.js', 'MySQL', 'WebRTC'],
+    description: '메타버스 환경에서 실시간 화상 강의를 제공하는 하이브리드 교육 플랫폼입니다.',
+    tech: ['Unity', 'Vue.js', 'Python', 'Django', 'MySQL', 'WebRTC', 'OpenVidu', 'Photon', 'Docker'],
     image: 'https://github.com/yoonsoyoung/1Dayverse/blob/main/exec/%EC%8B%9C%EC%97%B0%20%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4/%ED%99%88%ED%99%94%EB%A9%B41.PNG?raw=true',
     hasDetailPage: true,
     period: '2021.10 ~ 2021.11',
-    team: '5인 팀프로젝트',
+    team: '5인 팀프로젝트(화상 강의 + 배포)',
     infoLink: 'https://github.com/yoonsoyoung/1Dayverse',
     overview: `메타버스 환경에서 실시간 화상 강의를 제공하는 서비스입니다.
 Unity 기반의 3D 메타버스에서 강사와 학생이 아바타로 상호작용하며, OpenVidu를 통한 실시간 화상 강의와 화면 공유 기능을 제공합니다. Vue.js 기반 관리 시스템과 Django 백엔드로 강의 스케줄, 사용자 관리, 결제 등을 처리합니다.`,
