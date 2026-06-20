@@ -36,7 +36,7 @@ export function Skills(): React.ReactElement {
 
   const frontendSkills: Skill[] = [
     { name: 'HTML 5', icon: 'dot-orange' },
-    { name: 'CSS 3', icon: 'dot-blue' },
+    { name: 'SCSS', icon: 'dot-pink' },
     { name: 'JavaScript', icon: 'dot-yellow' },
     { name: 'Vue.js', icon: 'dot-green' },
     { name: 'React', icon: 'dot-cyan' },
@@ -45,6 +45,10 @@ export function Skills(): React.ReactElement {
   const backendSkills: Skill[] = [
     { name: 'Java', icon: 'dot-red' },
     { name: 'Spring Boot', icon: 'dot-emerald' },
+    { name: 'JSP', icon: 'dot-gray' },
+    { name: 'MSSQL', icon: 'dot-indigo' },
+    { name: 'MySQL', icon: 'dot-blue' },
+    { name: 'MyBatis', icon: 'dot-purple' },
   ];
 
   return (
