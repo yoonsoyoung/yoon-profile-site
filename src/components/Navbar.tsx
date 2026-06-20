@@ -46,8 +46,10 @@ export function Navbar(): React.ReactElement {
 
   const navLinks: NavLink[] = [
     { label: '소개', href: '#about' },
+    { label: '경력', href: '#career' },
     { label: '기술', href: '#skills' },
     { label: '프로젝트', href: '#projects' },
+    { label: '교육 및 자격', href: '#education' },
     { label: '연락처', href: '#contact' },
   ];
 
