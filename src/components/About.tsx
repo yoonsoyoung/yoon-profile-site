@@ -45,13 +45,13 @@ export function About(): React.ReactElement {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           <div className="flex flex-col gap-6">
             <p className="text-text-secondary text-base md:text-lg leading-relaxed">
-              저는 개발의 본질을 '사용자 관점에서 문제를 해결하는 것'이라 봅니다. 단순히 기능을 구현하는 것을 넘어, 관리자와 사용자가 실제로 필요로 하는 것이 무엇인지 고민하며 개발합니다.
+              저는 개발의 본질을 '사용자 관점에서 문제를 해결하는 것'이라 봅니다. 기능을 구현하는 데서 그치지 않고, 관리자와 사용자가 실제로 무엇을 필요로 하는지 고민하며 개발합니다.
             </p>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed">
-              2년 이상의 LMS 솔루션 개발 경험을 통해 Java, Spring Boot 기반 백엔드와 Vue.js 기반 프론트엔드 전 영역을 구축, 운영하며 익혔습니다. 특히 운영 안정성과 유지보수를 고려한 설계에 관심을 두며, 단순한 기능 추가뿐 아니라 확장성 있는 구조를 만드는 것을 중요하게 생각합니다.
+               2년 넘게 LMS 솔루션을 개발하면서 Java, Spring Boot, JSP 기반의 안정적이고 확장성 있는 백엔드 설계를 경험했습니다. 부트캠프와 온라인 강의로 Vue.js, React 등 프론트엔드 기술을 익히며, 더 넓은 관점에서 사용자 중심의 서비스를 만드는 법을 배우고 있습니다.
             </p>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed">
-              협업과 소통을 통해 팀과 함께 성장하고, 더 많은 도메인 경험과 기술 역량을 쌓아가며 사용자 중심의 서비스를 만드는 개발자가 되고자 합니다.
+              협업하고 소통하며 팀과 함께 성장하고, 더 많은 도메인 경험과 기술 역량을 쌓아 사용자 중심의 서비스를 만드는 개발자가 되고자 합니다.
             </p>
           </div>
 
