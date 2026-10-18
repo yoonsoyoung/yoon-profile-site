@@ -61,7 +61,7 @@ export function Navbar(): React.ReactElement {
         <a
           href="#hero"
           onClick={(e) => handleNavLinkClick(e, 'hero')}
-          className="text-xl font-bold text-text-primary hover:text-accent transition-colors"
+          className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
         >
           SOYOUNG.
         </a>
