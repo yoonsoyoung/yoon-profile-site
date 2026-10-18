@@ -82,6 +82,11 @@ export function Contact(): React.ReactElement {
           </a>
         </div>
       </div>
+      <img
+        src={`${import.meta.env.BASE_URL}img/[asset]다람쥐.png`}
+        alt=""
+        className="pixel-sprite absolute left-4 md:left-12 bottom-2 w-20 md:w-28"
+      />
     </section>
   );
 }
