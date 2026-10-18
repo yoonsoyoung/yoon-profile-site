@@ -21,6 +21,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'Pretendard Variable', 'system-ui', 'sans-serif'],
+        pixel: ['DungGeunMo', 'Pretendard Variable', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       fontSize: {
