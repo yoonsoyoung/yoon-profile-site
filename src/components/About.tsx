@@ -55,7 +55,13 @@ export function About(): React.ReactElement {
             </p>
           </div>
 
-          <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 flex flex-col gap-6 h-fit">
+          <div className="relative bg-bg-card border border-border-subtle rounded-2xl p-8 flex flex-col gap-6 h-fit mt-12 md:mt-0">
+            <img
+              src={`${import.meta.env.BASE_URL}img/[asset]캐릭터_서있기.png`}
+              alt=""
+              className="pixel-sprite absolute -top-14 right-4 w-28"
+            />
+            <div className="pixel-titlebar"><i></i><i></i><i></i><span className="ml-2">profile.exe</span></div>
             <div>
               <div className="text-accent font-mono text-xs tracking-widest uppercase mb-2">About</div>
               <h3 className="text-text-primary text-lg font-semibold">개발자로서의 여정</h3>

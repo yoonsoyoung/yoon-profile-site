@@ -5,9 +5,16 @@ export function Footer(): React.ReactElement {
     <footer className="bg-bg-secondary border-t border-border-subtle py-12 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-border-subtle">
-          <div>
-            <h3 className="text-text-primary font-bold text-lg mb-1">윤소영</h3>
-            <p className="text-text-secondary text-sm">풀스택 개발자</p>
+          <div className="flex items-center gap-3">
+            <img
+              src={`${import.meta.env.BASE_URL}img/[asset]캐릭터_서있기.png`}
+              alt=""
+              className="pixel-sprite w-16 h-16"
+            />
+            <div>
+              <h3 className="text-text-primary font-bold text-lg mb-1">윤소영</h3>
+              <p className="text-text-secondary text-sm">풀스택 개발자</p>
+            </div>
           </div>
 
           <div className="flex justify-center md:justify-end gap-6">

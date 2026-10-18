@@ -109,6 +109,11 @@ export function Career(): React.ReactElement {
           </div>
         )}
       </div>
+      <img
+        src={`${import.meta.env.BASE_URL}img/[asset]다람쥐.png`}
+        alt=""
+        className="pixel-sprite absolute right-4 md:right-12 bottom-2 w-20 md:w-28"
+      />
     </section>
   );
 }
